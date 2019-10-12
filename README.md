@@ -7,7 +7,7 @@ The program connects to my web server via SSH and starts to randomly play throug
 |Required File/Folder     | Description                                                   |
 |-------------------------|---------------------------------------------------------------|
 | /home/pi/loadedchoons/  | Buffer folder, will be generated automatically if not present |
-| trinXXXX@linux.ox.ac.uk | The username and location of my SSH server                    |
+| XXXXX@XXXXX.com         | The username and location of my SSH server                    |
 | SSHpassword.txt         | password file for previously-mentioned SSH server             |
 | /home/pi/OfflineMovs/   | A folder containing backup, offline media files               |
 
