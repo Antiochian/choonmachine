@@ -14,12 +14,12 @@ then #ONLINE MODE
 	fi
 	
 	#randomly reorders contents of webserver folder and iterates through filenames
-	for f in $(sshpass -f 'SSHpassword.txt' ssh trin3161@linux.ox.ac.uk ls IDENTS/*.mov | shuf) 
+	for f in $(sshpass -f 'SSHpassword.txt' ssh trin3161@linux.ox.ac.uk ls CURRENT/*.mov | shuf) 
 	do
-		omxplayer --vol -900 -o local -b /home/pi/loadedchoons/current.mov & #plau current file
-		#Download next file WHILE video is playing to save time
+		#Download next file in background WHILE video is playing to save time
 		sshpass -f '/home/pi/SSHpassword.txt' scp -o PreferredAuthentications=password -v XXXX@XXXX:$f /home/pi/loadedchoons/next.mov &
-		wait #wait for both video and download to finish
+		omxplayer --vol -900 -o local -b /home/pi/loadedchoons/current.mov #play current file
+		wait #wait for download to finish if it hasnt already
 		#Change "next" file to "current" for loop
 		cp /home/pi/loadedchoons/next.mov /home/pi/loadedchoons/current.mov
 		echo "Up Next: $f" #print current file
