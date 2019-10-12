@@ -1,6 +1,12 @@
 #! /bin/bash
+#Overall program flow
+#	1. Checks for internet connection and switches into ONLINE or OFFLINE mode
+#	2. Iterates through a shuffled list all valid filenames in target folder, either my SSH server (ONLINE mode) or a local directory (OFFLINE omde)
+#	3. While first video is playing, downloads second video in background
+#	4. After video finishes, replace "current.mov" file and repeat until all files have been played
+#	5. end
 
-#CHECK INTERNET CONNECTIONS
+#CHECK INTERNET CONNECTION
 if ping -1 -c 1 -W 2 google.com
 then #ONLINE MODE
 	echo "Network connection successful"
