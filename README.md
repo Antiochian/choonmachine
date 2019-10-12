@@ -10,3 +10,17 @@ There are a few different versions.
 
 [A video of an earlier, much  setup can be seen here.](https://streamable.com/rtfv1 "Streamable")
 ![Choonmachine Setup](choonmachine.png)
+
+FILESYSTEM STRUCTURE:
+-------
+/home/pi/loadedchoons/
+- will be generated if not already present - acts as a buffer to enable preloading files
+
+trinXXXX@linux.ox.ac.uk
+- The username and location of my SSH server
+
+SSHpassword.txt
+- The password required for aforementioned SSH server
+
+/home/pi/Music/Movs
+- The location of offline media file storage
