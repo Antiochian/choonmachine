@@ -1,26 +1,14 @@
 # choonmachine
-Tiny bash script to automate shuffle-play on my CCTV monitor.
+Tiny bash script to automate shuffle-play on my CCTV monitor/music video player.
 
-The program connects to my web server via SSH and starts to randomly play through a folder of music videos I have stored there. If there is no internet connection, it instead plays through a folder of music videos in offline-storage
-
-There are a few different versions.
-- liteCHOON.sh is designed to run from a CLI, which makes the boot time almost 9 times quicker (can be placed in .bashrc for autoplay)
-- openchoon.sh is desinged to run from a GUI, and can be placed in autostart for autoplay
-- sshCHOON.sh is called by openchoon.sh and contains a few extra GUI-based commands to control window focus and terminal size
+The program connects to my web server via SSH and starts to randomly play through a folder of music videos I have stored there. If there is no internet connection, it instead plays through a folder of music videos kept in offline-storage.
+|Required File/Folder     | Description                                                 |
+|-------------------------|---------------------------------------------------------------|
+| /home/pi/loadedchoons/  | Buffer folder, will be generated automatically if not present |
+| trinXXXX@linux.ox.ac.uk | The username and location of my SSH server                    |
+| SSHpassword.txt         | password file for previously-mentioned SSH server             |
+| /home/pi/OfflineMovs/   | A folder containing backup, offline media files               |
 
 [A video of an earlier, much  setup can be seen here.](https://streamable.com/rtfv1 "Streamable")
 ![Choonmachine Setup](choonmachine.png)
 
-FILESYSTEM STRUCTURE:
--------
-/home/pi/loadedchoons/
-- will be generated if not already present - acts as a buffer to enable preloading files
-
-trinXXXX@linux.ox.ac.uk
-- The username and location of my SSH server
-
-SSHpassword.txt
-- The password required for aforementioned SSH server
-
-/home/pi/Music/Movs
-- The location of offline media file storage
